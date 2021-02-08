@@ -1,12 +1,30 @@
 <template>
   <form>
     <label>Email:</label>
-    <input type="email" required />
+    <input type="email" v-model="email" required autocomplete="current-email" />
+
+    <label>Password:</label>
+    <input
+      type="password"
+      v-model="password"
+      required
+      autocomplete="current-password"
+    />
   </form>
+
+  <p>Email: {{ email }}</p>
+  <p>Password: {{ password }}</p>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+};
 </script>
 
 <style>
